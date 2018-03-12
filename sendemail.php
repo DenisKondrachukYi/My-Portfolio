@@ -1,12 +1,12 @@
 <?php
-   
+
 
     session_cache_limiter( 'nocache' );
     header( 'Expires: ' . gmdate( 'r', 0 ) );
     header( 'Content-type: application/json' );
 
 
-    $to             = 'themehippo@gmail.com'; //put your email here
+    $to             = 'deniskondrachuk@gmail.com'; //put your email here
     $email_template = 'simple.html';  // will find it on email-templates/ directory
 
     $subject    = "SUBJECT";
@@ -21,14 +21,14 @@
         $result = array( 'response' => 'error', 'empty'=>'name', 'message'=>'<strong>Error!</strong> Name is empty.' );
         echo json_encode($result );
         die;
-    } 
+    }
 
     if(empty($email)){
 
         $result = array( 'response' => 'error', 'empty'=>'email', 'message'=>'<strong>Error!</strong> Email is empty.' );
         echo json_encode($result );
         die;
-    } 
+    }
 
     if(empty($message)){
 
@@ -36,7 +36,7 @@
          echo json_encode($result );
          die;
     }
-    
+
 
 
     $headers  = "From: " . $name . ' <' . $email . '>' . "\r\n";
